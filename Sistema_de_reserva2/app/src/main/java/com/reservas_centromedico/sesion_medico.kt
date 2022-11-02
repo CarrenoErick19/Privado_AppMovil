@@ -25,6 +25,20 @@ class sesion_medico : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        //Boton ir a cita1
+        val btn3: Button = findViewById(R.id.button12)
+        btn3.setOnClickListener{
+            val intent: Intent = Intent(this, medico_vercita:: class.java)
+            startActivity(intent)
+            finish()
+        }
+        //Boton ir a cita2
+        val btn4: Button = findViewById(R.id.button14)
+        btn4.setOnClickListener{
+            val intent: Intent = Intent(this, medico_vercita:: class.java)
+            startActivity(intent)
+            finish()
+        }
     }
     //Asignar que el boton atras regrese a la pantalla principal
     override fun onBackPressed() {
