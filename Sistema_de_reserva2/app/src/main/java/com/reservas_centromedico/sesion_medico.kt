@@ -18,6 +18,13 @@ class sesion_medico : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        //Boton modificar datos medico
+        val btn2: Button = findViewById(R.id.button9)
+        btn2.setOnClickListener{
+            val intent: Intent = Intent(this, mod_datamedico:: class.java)
+            startActivity(intent)
+            finish()
+        }
     }
     //Asignar que el boton atras regrese a la pantalla principal
     override fun onBackPressed() {
