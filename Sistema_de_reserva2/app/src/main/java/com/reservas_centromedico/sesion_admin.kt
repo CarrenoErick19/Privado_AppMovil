@@ -42,6 +42,14 @@ class sesion_admin : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        //Boton modificar paciente
+        val btn5: Button = findViewById(R.id.button16)
+        btn5.setOnClickListener{
+
+            val intent: Intent = Intent(this, admin_modpaciente:: class.java)
+            startActivity(intent)
+            finish()
+        }
     }
     //Asignar que el boton atras regrese a la pantalla login admin
     override fun onBackPressed() {
