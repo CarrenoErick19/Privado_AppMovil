@@ -50,6 +50,22 @@ class sesion_admin : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        //Boton lista de medicos
+        val btn6: Button = findViewById(R.id.button17)
+        btn6.setOnClickListener{
+
+            val intent: Intent = Intent(this, admin_listmedico:: class.java)
+            startActivity(intent)
+            finish()
+        }
+        //Boton lista de citas
+        val btn7: Button = findViewById(R.id.button18)
+        btn7.setOnClickListener{
+
+            val intent: Intent = Intent(this, admin_listcitas:: class.java)
+            startActivity(intent)
+            finish()
+        }
     }
     //Asignar que el boton atras regrese a la pantalla login admin
     override fun onBackPressed() {
