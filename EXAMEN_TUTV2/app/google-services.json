@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "268467634147",
+    "project_id": "mfacultad-443d8",
+    "storage_bucket": "mfacultad-443d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268467634147:android:a7bec773362f90996d6ad6",
+        "android_client_info": {
+          "package_name": "com.example.examen_tutosv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268467634147-r5chbbd4bfshvirbi12ogr0m3n4kia3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjnxied6qxd4GKnpOq2ts6bT2UAyUn9Rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268467634147-r5chbbd4bfshvirbi12ogr0m3n4kia3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268467634147:android:b88d11ec208f48fa6d6ad6",
+        "android_client_info": {
+          "package_name": "com.example.examen_tutv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268467634147-r5chbbd4bfshvirbi12ogr0m3n4kia3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjnxied6qxd4GKnpOq2ts6bT2UAyUn9Rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268467634147-r5chbbd4bfshvirbi12ogr0m3n4kia3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
