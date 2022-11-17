@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "289050127334",
+    "firebase_url": "https://faculta-801bb-default-rtdb.firebaseio.com",
+    "project_id": "faculta-801bb",
+    "storage_bucket": "faculta-801bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289050127334:android:d38edb4e4f4a6d85654427",
+        "android_client_info": {
+          "package_name": "com.example.firebasekotlincrud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289050127334-mcup5fsvg5fl5ec7dcll1udtv58k6r3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4wvcmH4h5NUXwaoK_dpQF5TlnW1tBPtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289050127334-mcup5fsvg5fl5ec7dcll1udtv58k6r3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

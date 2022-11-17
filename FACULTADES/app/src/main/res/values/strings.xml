@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FirebaseKotlinCRUD</string>
+    <string name="all">TODO</string>
+    <string name="name">Ingrese aqui nombre de facultad</string>
+    <string name="date">Ingrese aqui descripcion de facultad</string>
+    <string name="title_activity_main">FACULTADES</string>
+    <string name="subtitle_activity_main">Erick Carreño Reyes - 7mo Nivel "A"</string>
+    <string name="title_activity_add">Nueva facultad</string>
+    <string name="title_activity_edit">Datos de la facultad</string>
+    <string name="name_form">Nombre</string>
+    <string name="date_form">Fecha</string>
+    <string name="url_form">Url imagen</string>
+    <string name="description_form">Descripción</string>
+    <string name="save">Guardar</string>
+    <string name="description">En este apartado se podra observar la descripcion de la facultad ingresada.</string>
+</resources>
