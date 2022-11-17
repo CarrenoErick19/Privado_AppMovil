@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
-    private val listVideogames:MutableList<Videogame> = ArrayList()
-    val myRef = database.getReference("videogame")
+    private val listVideogames:MutableList<Facultad> = ArrayList()
+    val myRef = database.getReference("facultad")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         //Boton flotante para agregar una nueva facultad
         newFloatingActionButton.setOnClickListener { v ->
-            val intent = Intent(this, AddActivity::class.java)
+            val intent = Intent(this, agregar_facul::class.java)
             v.context.startActivity(intent)
         }
 
@@ -52,13 +52,13 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 listVideogames.clear()
                 dataSnapshot.children.forEach { child ->
-                    val videogame: Videogame? =
-                            Videogame(child.child("name").getValue<String>(),
-                                    child.child("date").getValue<String>(),
-                                    child.child("description").getValue<String>(),
+                    val facultad: Facultad? =
+                            Facultad(child.child("name").getValue<String>(),
+                                    child.child("credito").getValue<String>(),
+                                    child.child("metodologia").getValue<String>(),
                                     child.child("url").getValue<String>(),
                                     child.key)
-                    videogame?.let { listVideogames.add(it) }
+                    facultad?.let { listVideogames.add(it) }
                 } //Listar el contenido en un recycler view mediante un adapter
                 recyclerView.adapter = VideogameViewAdapter(listVideogames)
             }
@@ -69,10 +69,10 @@ class MainActivity : AppCompatActivity() {
         }
         myRef.addValueEventListener(messagesListener)
 
-        deleteSwipe(recyclerView)
+        //deleteSwipe(recyclerView)
     }
 
-    class VideogameViewAdapter(private val values: List<Videogame>) :
+    class VideogameViewAdapter(private val values: List<Facultad>) :
         RecyclerView.Adapter<VideogameViewAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val videogame = values[position]
             holder.mNameTextView.text = videogame.name
-            holder.mDateTextView.text = videogame.date
+            holder.mCreditoTextView.text = videogame.credito
+            holder.mMetodologiaTextView.text = videogame.metodologia
             holder.mPosterImgeView?.let {
                 Glide.with(holder.itemView.context)
                     .load(videogame.url)
@@ -98,13 +99,13 @@ class MainActivity : AppCompatActivity() {
                 v.context.startActivity(intent)
             }
             //ELIMINAR, AL MANTENER SE EDITA
-            holder.itemView.setOnLongClickListener{ v ->
+            /*holder.itemView.setOnLongClickListener{ v ->
                 val intent = Intent(v.context, EditActivity::class.java).apply {
                     putExtra("key", videogame.key)
                 }
                 v.context.startActivity(intent)
                 true
-            }
+            }*/
 
         }
 
@@ -112,12 +113,13 @@ class MainActivity : AppCompatActivity() {
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val mNameTextView: TextView = view.nameTextView
-            val mDateTextView: TextView = view.dateTextView
+            val mCreditoTextView: TextView = view.creditoTextView
+            val mMetodologiaTextView: TextView = view.metodologiaTextView
             val mPosterImgeView: ImageView? = view.posterImgeView
         }
     }
     //ELIMINAR ESTO, FUNCION PARA ELIMINAR AL DESLIZAR A LA DERECHA
-    private fun deleteSwipe(recyclerView: RecyclerView){
+    /*private fun deleteSwipe(recyclerView: RecyclerView){
         val touchHelperCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
                 return false
@@ -132,7 +134,7 @@ class MainActivity : AppCompatActivity() {
         }
         val itemTouchHelper = ItemTouchHelper(touchHelperCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
-    }
+    }*/
 
 }
 

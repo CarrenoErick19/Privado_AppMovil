@@ -24,8 +24,8 @@ class agregar_facul : AppCompatActivity() {
         val url=urlEditText.text
         //Se guarda la informacion mediante el boton
         saveButton.setOnClickListener { v ->
-            val videogame = Videogame(name.toString(), credito.toString(), metodologia.toString(), url.toString())
-            myRef.child(myRef.push().key.toString()).setValue(videogame)
+            val facultad = Facultad(name.toString(), credito.toString(), metodologia.toString(), url.toString())
+            myRef.child(myRef.push().key.toString()).setValue(facultad)
             finish()
         }
     }

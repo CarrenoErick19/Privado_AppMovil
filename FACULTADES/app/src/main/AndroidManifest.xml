@@ -18,14 +18,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditActivity"
-            android:theme="@style/Theme.FormActivity" />
-        <activity
             android:name=".VideogameDetail"
             android:theme="@style/Theme.DetailActivity" />
-        <activity
-            android:name=".AddActivity"
-            android:theme="@style/Theme.FormActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.MainActivity">

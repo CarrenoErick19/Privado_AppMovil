@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "289050127334",
-    "firebase_url": "https://faculta-801bb-default-rtdb.firebaseio.com",
-    "project_id": "faculta-801bb",
-    "storage_bucket": "faculta-801bb.appspot.com"
+    "project_number": "371330332495",
+    "firebase_url": "https://facultad2-81ebc-default-rtdb.firebaseio.com",
+    "project_id": "facultad2-81ebc",
+    "storage_bucket": "facultad2-81ebc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:289050127334:android:d38edb4e4f4a6d85654427",
+        "mobilesdk_app_id": "1:371330332495:android:54e95488441eb4ae72b73a",
         "android_client_info": {
           "package_name": "com.example.firebasekotlincrud"
         }
       },
       "oauth_client": [
         {
-          "client_id": "289050127334-mcup5fsvg5fl5ec7dcll1udtv58k6r3o.apps.googleusercontent.com",
+          "client_id": "371330332495-l5f8n8plo073pc4i4jsbp3s6tc3lq9fu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB4wvcmH4h5NUXwaoK_dpQF5TlnW1tBPtc"
+          "current_key": "AIzaSyB9G_Ye2z2akLScXRlr9f2mpdyCjY6vr0U"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "289050127334-mcup5fsvg5fl5ec7dcll1udtv58k6r3o.apps.googleusercontent.com",
+              "client_id": "371330332495-l5f8n8plo073pc4i4jsbp3s6tc3lq9fu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
