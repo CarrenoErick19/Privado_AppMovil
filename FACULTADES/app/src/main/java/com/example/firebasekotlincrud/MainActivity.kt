@@ -32,12 +32,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Boton flotante para agregar una nueva facultad
         newFloatingActionButton.setOnClickListener { v ->
             val intent = Intent(this, AddActivity::class.java)
             v.context.startActivity(intent)
         }
 
+        //Limpiar la lista de los videojuegos
         listVideogames.clear()
+        //inicializar los componentes del diseño, en este caso el recycler view
         setupRecyclerView(videogameRecyclerView)
 
     }
@@ -45,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupRecyclerView(recyclerView: RecyclerView) {
 
         messagesListener = object : ValueEventListener {
-
+            //Obtener los datos relevantes de la facultad mediante un foreach
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 listVideogames.clear()
                 dataSnapshot.children.forEach { child ->
@@ -56,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                                     child.child("url").getValue<String>(),
                                     child.key)
                     videogame?.let { listVideogames.add(it) }
-                }
+                } //Listar el contenido en un recycler view mediante un adapter
                 recyclerView.adapter = VideogameViewAdapter(listVideogames)
             }
 
@@ -77,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 .inflate(R.layout.videogame_content, parent, false)
             return ViewHolder(view)
         }
-
+        //Se recuperan los datos de la lista a traves de la posicion
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val videogame = values[position]
             holder.mNameTextView.text = videogame.name
@@ -87,14 +90,14 @@ class MainActivity : AppCompatActivity() {
                     .load(videogame.url)
                     .into(it)
             }
-
+            //Al seleccionar un item, mostrara los detalles del mismo
             holder.itemView.setOnClickListener { v ->
                 val intent = Intent(v.context, VideogameDetail::class.java).apply {
-                    putExtra("key", videogame.key)
+                    putExtra("key", videogame.key) //Llave primaria a enviar
                 }
                 v.context.startActivity(intent)
             }
-
+            //ELIMINAR, AL MANTENER SE EDITA
             holder.itemView.setOnLongClickListener{ v ->
                 val intent = Intent(v.context, EditActivity::class.java).apply {
                     putExtra("key", videogame.key)
@@ -113,7 +116,7 @@ class MainActivity : AppCompatActivity() {
             val mPosterImgeView: ImageView? = view.posterImgeView
         }
     }
-
+    //ELIMINAR ESTO, FUNCION PARA ELIMINAR AL DESLIZAR A LA DERECHA
     private fun deleteSwipe(recyclerView: RecyclerView){
         val touchHelperCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {

@@ -73,6 +73,6 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/all"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/final_fantasy" />
+            app:srcCompat="@drawable/facultad" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
