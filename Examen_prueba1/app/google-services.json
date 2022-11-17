@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "296513702284",
+    "firebase_url": "https://afacul-f428e-default-rtdb.firebaseio.com",
+    "project_id": "afacul-f428e",
+    "storage_bucket": "afacul-f428e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296513702284:android:3bcabd6dd0e54ecfb6aea9",
+        "android_client_info": {
+          "package_name": "com.example.facultad_1p"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296513702284-vbse5jf93r88rbsj53i2cshupv52s173.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh4qkYfKdmwFLD91vAtual5lTW91ehFug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296513702284-vbse5jf93r88rbsj53i2cshupv52s173.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
