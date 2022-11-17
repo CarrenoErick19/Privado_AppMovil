@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "627247420331",
+    "firebase_url": "https://facultad-f2c6c-default-rtdb.firebaseio.com",
+    "project_id": "facultad-f2c6c",
+    "storage_bucket": "facultad-f2c6c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627247420331:android:a6764940203bc526a1f8ee",
+        "android_client_info": {
+          "package_name": "com.example.tuto_examen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627247420331-m4c4gcid0hbege1o1lkiaki98t51hd4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCApwskMx4fb5fPGuCWP1zKIQyIsnlPgtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627247420331-m4c4gcid0hbege1o1lkiaki98t51hd4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
