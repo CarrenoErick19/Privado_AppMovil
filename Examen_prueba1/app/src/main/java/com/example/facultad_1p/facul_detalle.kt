@@ -3,6 +3,7 @@ package com.example.facultad_1p
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,13 +19,14 @@ class facul_detalle : AppCompatActivity() {
         val key = intent.getStringExtra("key")
         val database = Firebase.database
 
-        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("videogame").child(key)
+        @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val myRef = database.getReference("facultad").child(key)
 
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val videogame:Videogame? = dataSnapshot.getValue(Videogame::class.java)
-                if (videogame != null) {
+                val facultad:Facultad? = dataSnapshot.getValue(Facultad::class.java)
+                if (facultad != null) {
+                    nombreTextView.text = facultad.nombre.toString()
                     nameTextView.text = videogame.name.toString()
                     descriptionTextView.text = videogame.description.toString()
                     images(videogame.url.toString())
