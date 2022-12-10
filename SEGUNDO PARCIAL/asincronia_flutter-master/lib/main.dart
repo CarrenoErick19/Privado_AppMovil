@@ -2,20 +2,21 @@ import 'package:asincronia/services/mockapi.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'Container.dart';
-import 'FisherPrice.dart';
-import 'hyundai.dart';
+import 'obtener_ferrari.dart';
+import 'obtener_fisherprice.dart';
+import 'obtener_hyundai.dart';
 
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const String _title = 'Flutter Code Sample';
+  static const String _title = 'Asincronia con Flutter';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //Retirar cinta de debug
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title)),
@@ -33,8 +34,6 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  // Define las diferentes propiedades con valores por defecto.
-  // Actualiza estas propiedades cuando el usuario toque un FloatingActionButton.
   double _width = 50;
   double _height = 50;
 

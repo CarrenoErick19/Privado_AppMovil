@@ -5,28 +5,18 @@ import 'dart:math';
 import 'package:asincronia/services/mockapi.dart';
 import 'package:flutter/material.dart';
 
-class FisherPrice extends StatefulWidget {
-  const FisherPrice({Key? key}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+class ListScreen extends StatefulWidget {
+  const ListScreen({Key? key}) : super(key: key);
 
   @override
   _ListScreenState createState() => _ListScreenState();
 }
 
-class _ListScreenState extends State<FisherPrice> {
-  // Ststatic const String _title = 'Flutter Code Sample';
+class _ListScreenState extends State<ListScreen> {
   double _width = 0;
   int resultado = 0;
   bool _textoActivo = false;
-  Color _color = Colors.redAccent;
+  Color _color = Color.fromARGB(255, 76, 175, 165);
   bool _isExpanded = false;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(8);
 
@@ -41,49 +31,40 @@ class _ListScreenState extends State<FisherPrice> {
               width: 90,
               height: 90,
               decoration: const ShapeDecoration(
-                color: Colors.redAccent,
+                color: Color.fromARGB(255, 76, 175, 165),
                 shape: CircleBorder(),
               ),
               child: IconButton(
                 icon: Icon(
-                  Icons.directions_walk,
+                  Icons.bolt,
                   color: Colors.black,
                   size: 50.0,
                 ),
                 color: Colors.white,
                 onPressed: () async {
                   _toggleExpand();
-                  resultado = await MockApi().getFisherPriceInteger() as int;
+                  resultado = await MockApi().getFerrariInteger() as int;
                   refresh();
-                  await Future.delayed(Duration(seconds: 10));
+                  await Future.delayed(Duration(seconds: 1));
 
                   _textoActivo = true;
-
-                  // Ge_toggleExpandnera un color aleatorio.
                 },
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(
-                  8.0), // add space of 8.0 logical pixels on all sides
+              padding: EdgeInsets.all(8.0),
               child: Text(""),
             ),
             AnimatedContainer(
-              // Usa setState para reconstruir el widget con nuevos valores.
               width: _isExpanded ? _width : _width,
               height: 15,
-
               decoration: BoxDecoration(
-                color: Colors.redAccent,
+                color: _color,
               ),
-              // Define la duración de la animación.
-              duration: Duration(seconds: _isExpanded ? 10 : 0),
-
-              // Proporciona una curva opcional para hacer que la animación se sienta más suave.
+              duration: Duration(seconds: _isExpanded ? 1 : 0),
             ),
             Padding(
-              padding: EdgeInsets.all(
-                  8.0), // add space of 8.0 logical pixels on all sides
+              padding: EdgeInsets.all(4.0),
               child: Text(""),
             ),
             Text(
@@ -93,7 +74,7 @@ class _ListScreenState extends State<FisherPrice> {
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
-                  color: Colors.redAccent),
+                  color: Color.fromARGB(255, 76, 175, 167)),
             ),
           ],
         ));
