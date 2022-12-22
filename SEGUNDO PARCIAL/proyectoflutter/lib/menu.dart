@@ -1,37 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proyectoflutter/admin/login_admin.dart';
-import 'package:proyectoflutter/info/q_somos.dart';
-import 'package:proyectoflutter/menu.dart';
-import 'package:proyectoflutter/usuario/login_user.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class PantallaMenu extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MainScreen(),
-    );
-  }
+  State<PantallaMenu> createState() => _PantallaMenuState();
 }
 
-//Menu pantalla principal
-class MainScreen extends StatefulWidget {
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
+class _PantallaMenuState extends State<PantallaMenu> {
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
   @override
@@ -60,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
                 height: 160,
               ),
               Text(
-                "Bienvenid@ al sistema de registro de citas medicas",
+                "Ingrese sus credenciales:",
                 overflow: TextOverflow.ellipsis,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
@@ -69,13 +43,27 @@ class _MainScreenState extends State<MainScreen> {
                 height: 25,
               ),
               Text(
-                "Iniciar sesión como:",
+                "Correo institucional:",
                 overflow: TextOverflow.ellipsis,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
-              SizedBox(
-                height: 25,
+              TextField(
+                controller: email,
+                decoration:
+                    InputDecoration(hintText: "nombreusuario@correo.com"),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Contraseña:",
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              TextField(
+                controller: password,
+                obscureText: true,
+                decoration: InputDecoration(hintText: "Ingrese su contraseña"),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
@@ -85,13 +73,10 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Administrador",
+                    "Ingresar",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Login_Admin()));
-                  },
+                  onPressed: () {},
                 ),
               ),
               SizedBox(
@@ -105,17 +90,14 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Usuario",
+                    "Registrarse",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Login_Usuario()));
-                  },
+                  onPressed: () {},
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
                 margin: EdgeInsets.only(top: 10),
@@ -125,12 +107,12 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "¿Quiénes somos?",
+                    "Salir",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Quienes_somos()));
+                        MaterialPageRoute(builder: (_) => PantallaMenu()));
                   },
                 ),
               ),
@@ -141,3 +123,58 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+
+// class PantallaMenu extends StatefulWidget {
+//   @override
+//   State<PantallaMenu> createState() => _PantallaMenuState();
+// }
+
+// class _PantallaMenuState extends State<PantallaMenu> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         child: ListView(
+//           padding: const EdgeInsets.all(8),
+//           children: <Widget>[
+//             Container(
+//               margin: EdgeInsets.only(top: 10),
+//               width: 200,
+//               decoration: BoxDecoration(
+//                   color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+//               child: TextButton(
+//                 child: Text(
+//                   "Administrador",
+//                   style: TextStyle(color: Colors.white, fontSize: 20),
+//                 ),
+//                 onPressed: () {},
+//               ),
+//             ),
+//             Container(
+//               height: 50,
+//               color: Colors.amber[500],
+//               child: const Center(child: Text('Entry B')),
+//             ),
+//             Container(
+//               height: 50,
+//               color: Colors.amber[100],
+//               child: const Center(child: Text('Entry C')),
+//             ),
+//           ],
+//         ),
+
+//         // child: GridView.builder(
+//         //     itemCount: Menu.length,
+//         //     gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+//         //         crossAxisCount: 1),
+//         //     itemBuilder: (context, index) {
+//         //       return Container(
+//         //         child: Column(
+//         //           children: [Text(Menu[index].nombre)],
+//         //         ),
+//         //       );
+//         //     }),
+//       ),
+//     );
+//   }
+// }

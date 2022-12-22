@@ -1,37 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:proyectoflutter/admin/login_admin.dart';
-import 'package:proyectoflutter/info/q_somos.dart';
-import 'package:proyectoflutter/menu.dart';
-import 'package:proyectoflutter/usuario/login_user.dart';
+import 'package:proyectoflutter/main.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+//Login administrador
+class Login_Admin extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MainScreen(),
-    );
-  }
+  State<Login_Admin> createState() => _Login_AdminState();
 }
 
-//Menu pantalla principal
-class MainScreen extends StatefulWidget {
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
+class _Login_AdminState extends State<Login_Admin> {
   TextEditingController email = new TextEditingController();
   TextEditingController password = new TextEditingController();
   @override
@@ -60,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
                 height: 160,
               ),
               Text(
-                "Bienvenid@ al sistema de registro de citas medicas",
+                "Administrador, por favor ingrese sus credenciales:",
                 overflow: TextOverflow.ellipsis,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
@@ -69,13 +45,26 @@ class _MainScreenState extends State<MainScreen> {
                 height: 25,
               ),
               Text(
-                "Iniciar sesión como:",
+                "Correo institucional:",
                 overflow: TextOverflow.ellipsis,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
-              SizedBox(
-                height: 25,
+              TextField(
+                controller: email,
+                decoration: InputDecoration(hintText: "nombreadmin@correo.com"),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Contraseña:",
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              TextField(
+                controller: password,
+                obscureText: true,
+                decoration: InputDecoration(hintText: "Ingrese su contraseña"),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
@@ -85,13 +74,10 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Administrador",
+                    "Ingresar",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Login_Admin()));
-                  },
+                  onPressed: () {},
                 ),
               ),
               SizedBox(
@@ -105,17 +91,14 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Usuario",
+                    "Registrarse",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Login_Usuario()));
-                  },
+                  onPressed: () {},
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Container(
                 margin: EdgeInsets.only(top: 10),
@@ -125,12 +108,12 @@ class _MainScreenState extends State<MainScreen> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "¿Quiénes somos?",
+                    "Salir",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => Quienes_somos()));
+                        MaterialPageRoute(builder: (_) => (MainScreen())));
                   },
                 ),
               ),
