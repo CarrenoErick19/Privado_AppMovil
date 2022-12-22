@@ -55,20 +55,31 @@ class __loginState extends State<_login> {
                 height: 160,
               ),
               Text(
+                "Ingrese sus credenciales:",
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
                 "Correo institucional:",
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
               TextField(
                 controller: email,
                 decoration:
                     InputDecoration(hintText: "nombreusuario@correo.com"),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 10),
               Text(
                 "Contraseña:",
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
               TextField(
                 controller: password,
@@ -76,12 +87,12 @@ class __loginState extends State<_login> {
                 decoration: InputDecoration(hintText: "Ingrese su contraseña"),
               ),
               Container(
-                margin: EdgeInsets.only(top: 70),
+                margin: EdgeInsets.only(top: 20),
                 width: 200,
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10)),
-                child: FloatingActionButton(
+                child: TextButton(
                   child: Text(
                     "Ingresar",
                     style: TextStyle(color: Colors.white, fontSize: 20),
@@ -90,17 +101,34 @@ class __loginState extends State<_login> {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 10,
               ),
               Container(
-                margin: EdgeInsets.only(top: 5),
+                margin: EdgeInsets.only(top: 10),
                 width: 200,
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(10)),
-                child: FloatingActionButton(
+                child: TextButton(
                   child: Text(
                     "Registrarse",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                width: 200,
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 122, 128, 133),
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextButton(
+                  child: Text(
+                    "Salir",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {},
