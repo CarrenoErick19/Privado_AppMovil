@@ -3,6 +3,7 @@ import 'package:proyectoflutter/admin/buscar_paciente.dart';
 import 'package:proyectoflutter/admin/sesion_admin.dart';
 import 'package:proyectoflutter/main.dart';
 
+//BUSCAR PACIENTE POR CEDULA PARA LUEGO MODIFICAR
 class Modificar_paciente extends StatefulWidget {
   @override
   State<Modificar_paciente> createState() => _Modificar_pacienteState();
