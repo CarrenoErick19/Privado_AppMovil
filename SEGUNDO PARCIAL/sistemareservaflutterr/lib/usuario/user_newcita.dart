@@ -86,7 +86,6 @@ class _New_citaState extends State<New_cita> {
               ),
               TextField(
                 controller: fechacita,
-                obscureText: true,
                 decoration:
                     InputDecoration(hintText: "Hora y fecha de la cita médica"),
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proyectoflutter/admin/list_pacientes.dart';
 import 'package:proyectoflutter/admin/login_admin.dart';
+import 'package:proyectoflutter/admin/mod_paciente.dart';
 import 'package:proyectoflutter/main.dart';
 
 class Sesion_admin extends StatefulWidget {
@@ -61,8 +63,8 @@ class _Sesion_adminState extends State<Sesion_admin> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (_) => (Cita_cancel())));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => (Lista_pacientes())));
                   },
                 ),
               ),
@@ -82,8 +84,10 @@ class _Sesion_adminState extends State<Sesion_admin> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (_) => (Mod_usuario())));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => (Modificar_paciente())));
                   },
                 ),
               ),

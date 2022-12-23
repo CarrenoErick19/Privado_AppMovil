@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:proyectoflutter/admin/sesion_admin.dart';
 import 'package:proyectoflutter/main.dart';
-import 'package:proyectoflutter/usuario/cancel_cita.dart';
-import 'package:proyectoflutter/usuario/mod_user.dart';
-import 'package:proyectoflutter/usuario/user_newcita.dart';
 
-class Sesion_user extends StatefulWidget {
+class Lista_pacientes extends StatefulWidget {
   @override
-  State<Sesion_user> createState() => _Sesion_userState();
+  State<Lista_pacientes> createState() => _Lista_pacientesState();
 }
 
-class _Sesion_userState extends State<Sesion_user> {
-  TextEditingController email = new TextEditingController();
-  TextEditingController password = new TextEditingController();
+class _Lista_pacientesState extends State<Lista_pacientes> {
+  TextEditingController nombre = new TextEditingController();
+  TextEditingController cedula = new TextEditingController();
+  TextEditingController nombre2 = new TextEditingController();
+  TextEditingController cedula2 = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +20,14 @@ class _Sesion_userState extends State<Sesion_user> {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  color: Colors.white,
+                  color: Colors.black38,
                   blurRadius: 25.0,
                   spreadRadius: 5.0,
                   offset: Offset(15.0, 15.0))
             ],
             color: Color.fromARGB(255, 173, 173, 172),
             borderRadius: BorderRadius.circular(20)),
-        margin: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 50),
+        margin: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 50),
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Center(
           child: Column(
@@ -35,48 +35,62 @@ class _Sesion_userState extends State<Sesion_user> {
             children: [
               Image.asset(
                 "assets/logomed.png",
-                height: 100,
+                height: 70,
               ),
               Text(
-                "Usted ha iniciado sesión como: Usuario",
+                "Listado de Usuarios Registrados:",
                 overflow: TextOverflow.ellipsis,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
               SizedBox(
-                height: 20,
+                height: 25,
               ),
               Text(
-                "Citas Pendientes:",
-                overflow: TextOverflow.ellipsis,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Médico:",
+                "Paciente 1:",
                 overflow: TextOverflow.ellipsis,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
               TextField(
-                controller: email,
+                controller: nombre,
                 enabled: false,
-                decoration: InputDecoration(hintText: "Nombre del Médico"),
+                decoration: InputDecoration(hintText: "Nombre del paciente 1"),
               ),
               SizedBox(height: 10),
               Text(
-                "Fecha/Hora:",
+                "Cédula:",
                 overflow: TextOverflow.ellipsis,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
               TextField(
-                controller: password,
+                controller: cedula,
                 enabled: false,
-                decoration: InputDecoration(hintText: "Hora de la cita médica"),
+                decoration: InputDecoration(hintText: "Cédula del paciente 1"),
+              ),
+              Text(
+                "Paciente 2:",
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              TextField(
+                controller: nombre2,
+                enabled: false,
+                decoration: InputDecoration(hintText: "Nombre del paciente 2"),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Cédula:",
+                overflow: TextOverflow.ellipsis,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
+              TextField(
+                controller: cedula2,
+                enabled: false,
+                decoration: InputDecoration(hintText: "Cédula del paciente 2"),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
@@ -86,52 +100,12 @@ class _Sesion_userState extends State<Sesion_user> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Cancelar cita",
+                    "Volver",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => (Cita_cancel())));
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                width: 200,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)),
-                child: TextButton(
-                  child: Text(
-                    "Modificar datos",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => (Mod_usuario())));
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                width: 200,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(10)),
-                child: TextButton(
-                  child: Text(
-                    "Agregar nueva cita",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => (New_cita())));
+                        MaterialPageRoute(builder: (_) => (Sesion_admin())));
                   },
                 ),
               ),
