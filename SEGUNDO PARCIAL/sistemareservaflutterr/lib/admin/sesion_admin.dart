@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:proyectoflutter/admin/sesion_admin.dart';
+import 'package:proyectoflutter/admin/login_admin.dart';
 import 'package:proyectoflutter/main.dart';
 
-//Login administrador
-class Login_Admin extends StatefulWidget {
+class Sesion_admin extends StatefulWidget {
   @override
-  State<Login_Admin> createState() => _Login_AdminState();
+  State<Sesion_admin> createState() => _Sesion_adminState();
 }
 
-class _Login_AdminState extends State<Login_Admin> {
-  TextEditingController email = new TextEditingController();
-  TextEditingController password = new TextEditingController();
+class _Sesion_adminState extends State<Sesion_admin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +16,7 @@ class _Login_AdminState extends State<Login_Admin> {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  color: Colors.black38,
+                  color: Colors.white,
                   blurRadius: 25.0,
                   spreadRadius: 5.0,
                   offset: Offset(15.0, 15.0))
@@ -34,38 +31,22 @@ class _Login_AdminState extends State<Login_Admin> {
             children: [
               Image.asset(
                 "assets/logomed.png",
-                height: 160,
+                height: 100,
               ),
               Text(
-                "Administrador, por favor ingrese sus credenciales:",
-                overflow: TextOverflow.ellipsis,
+                "Usted ha iniciado sesión como: Administrador",
+                textAlign: TextAlign.center,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
               ),
               SizedBox(
-                height: 25,
+                height: 20,
               ),
               Text(
-                "Correo institucional:",
+                "Elija una opción:",
                 overflow: TextOverflow.ellipsis,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-              TextField(
-                controller: email,
-                decoration: InputDecoration(hintText: "nombreadmin@correo.com"),
-              ),
-              SizedBox(height: 10),
-              Text(
-                "Contraseña:",
-                overflow: TextOverflow.ellipsis,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-              TextField(
-                controller: password,
-                obscureText: true,
-                decoration: InputDecoration(hintText: "Ingrese su contraseña"),
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
@@ -75,12 +56,54 @@ class _Login_AdminState extends State<Login_Admin> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextButton(
                   child: Text(
-                    "Ingresar",
+                    "Ver lista de pacientes",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (_) => (Cita_cancel())));
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                width: 200,
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextButton(
+                  child: Text(
+                    "Modificar los datos de un paciente",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onPressed: () {
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (_) => (Mod_usuario())));
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                width: 200,
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextButton(
+                  child: Text(
+                    "Regresar",
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => (Sesion_admin())));
+                        MaterialPageRoute(builder: (_) => (Login_Admin())));
                   },
                 ),
               ),
