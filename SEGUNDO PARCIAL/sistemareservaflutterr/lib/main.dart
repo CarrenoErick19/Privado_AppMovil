@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyectoflutter/admin/login_admin.dart';
-import 'package:proyectoflutter/info/q_somos.dart';
+import 'package:proyectoflutter/quien_somos.dart';
 import 'package:proyectoflutter/usuario/login_user.dart';
 
 void main() {
@@ -60,7 +60,6 @@ class _MainScreenState extends State<MainScreen> {
               ),
               Text(
                 "Bienvenid@ al sistema de registro de citas medicas",
-                overflow: TextOverflow.ellipsis,
                 style:
                     const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
